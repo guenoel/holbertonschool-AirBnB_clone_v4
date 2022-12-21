@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const $ = window.$;
+//const $ = window.$; pour faire plaisir a semistandard
 $(document).ready(function () {
   // Create a variable to store the Amenity IDs
   const amenities = {};
