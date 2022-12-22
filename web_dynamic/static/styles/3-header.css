@@ -10,19 +10,19 @@ header .logo {
     height: 100%;
 }
 #api_status {
-    /*display: inline-block;*/
+    display: inline-block;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     background-color: #cccccc;
-    /*position: absolute;*/
+    position: absolute;
     right: 30px;
     /*top: 50%;*/
-    /*transform: translateY(-50%);*/
+    transform: translateY(-140%);
     vertical-align: middle;
     text-align: right;
   }
   
-  .available {
+  #api_status.available {
     background-color: #ff545f;
   }
