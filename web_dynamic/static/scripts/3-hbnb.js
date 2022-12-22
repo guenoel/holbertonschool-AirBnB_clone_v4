@@ -52,7 +52,7 @@ $.get(API_URL, function (data, response) {
   // Make a POST request to the places_search endpoint with an empty body
   $.ajax({
     url: API_URL,
-    type: 'POST',
+    method: 'POST',
     contentType: 'application/json',
     data: '{}',
     success: function (data) {
