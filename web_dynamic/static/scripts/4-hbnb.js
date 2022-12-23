@@ -48,18 +48,20 @@ $(document).ready(function () {
       }
     });
 
-
-
-
+// Listen for clicks on the button tag
+$('button').click(function () {
     fetch("http://0.0.0.0:5100/api/v1/places_search", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
   },
-  body: JSON.stringify({}),
+  //Target the right places with amenities selected
+  body: JSON.stringify({ amenities: Object.keys(amenities) })
 })
   .then((response) => response.json())
   .then((places) => {
+    // Clear the contents of the section.places element
+    $('section.places').empty();
     const section = document.querySelector("section.places");
     for (const place of places) {
       const article = document.createElement("article");
@@ -80,9 +82,8 @@ $(document).ready(function () {
       `;
       section.appendChild(article);
     }
+
   });
-
-
-
+});
   // ready closure
   });
