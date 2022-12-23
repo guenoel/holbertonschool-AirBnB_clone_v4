@@ -48,6 +48,9 @@ $(document).ready(function () {
       }
     });
 
+
+
+
     fetch("http://0.0.0.0:5100/api/v1/places_search", {
   method: "POST",
   headers: {
@@ -59,12 +62,28 @@ $(document).ready(function () {
   .then((places) => {
     const section = document.querySelector("section.places");
     for (const place of places) {
+      console.log(place);
       const article = document.createElement("article");
       article.innerHTML = `
-        <h2>${place.name}</h2>
-        <p>${place.description}</p>
+        <div class="title_box">
+          <h2>${place.name}</h2>
+          <div class="price_by_night">${place.price_by_night}$</div>
+        </div>
+        <div class="information">
+                <div class="max_guest">${place.max_guest} Guest</div>
+                <div class="number_rooms">${place.number_rooms} Room</div>
+                <div class="number_bathrooms">${place.number_bathrooms} Bathroom</div>
+        </div>
+        <div class="description">
+              ${place.description}
+        </div>
+      
       `;
       section.appendChild(article);
     }
   });
+
+
+
+  // ready closure
   });
